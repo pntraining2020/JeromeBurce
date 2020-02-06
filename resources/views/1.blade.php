@@ -40,12 +40,12 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <!-- <select class="browser-default custom-select">
+                        <select class="browser-default custom-select">
                         Select name:
                         @foreach($names as $name)
                             <option >{{$name->name}}</option>
                         @endforeach          
-                        </select> -->
+                        </select>
                         <br>
                         <a href = "{{ url('get/clockin')}}" class="btn btn-primary" disable>CLOCK IN</a><br>
                         <input type="text" class="form-control" value="">{{time}}

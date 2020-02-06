@@ -76,8 +76,9 @@
 
                         </table>
                         <br>
-                        <button type="button" class="btn btn-success">TAKE ANOTHER BREAK</button><br>
+                       <br>
                         <button type="button" class="btn btn-primary">CLOCK OUT</button><br><br>
+                        <input type="text" class="form-control" value="" id ="inputclockout">
                         <table>
                             <tr >
                                 <td>
@@ -112,18 +113,27 @@
         </center>
     </body>
     <script>
-    var dt = new Date();
+        $("#end").attr("disabled", true);
         $("#clockin").click(function(){ 
+            var dt = new Date();
             var time = dt.getHours() + ":" + dt.getMinutes() 
             $("#clockin").attr("disabled", true);
             $("#inputclockin").val(time);
         })
+        $("#clockout").click(function(){ 
+            var dt = new Date();
+            var time = dt.getHours() + ":" + dt.getMinutes() 
+            $("#clockin").attr("disabled", false);
+            $("#inputclockout").val(time);
+        })
         $("#start").click(function(){ 
+            var dt = new Date();
             var time = dt.getHours() + ":" + dt.getMinutes() 
             $("#start").attr("disabled", true);
             $("#startinput").val(time);
         })
         $("#end").click(function(){ 
+            var dt = new Date();
             var time = dt.getHours() + ":" + dt.getMinutes() 
             $("#end").attr("disabled", true);
             $("#start").attr("disabled", false);
