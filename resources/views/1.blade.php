@@ -11,10 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
 </head>
         <title>Laravel</title>
 
@@ -44,30 +40,29 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <select class="browser-default custom-select">
+                        <!-- <select class="browser-default custom-select">
                         Select name:
                         @foreach($names as $name)
                             <option >{{$name->name}}</option>
                         @endforeach          
-                        </select>
+                        </select> -->
                         <br>
-                        <a href = "#" class="btn btn-primary" id="clockin">CLOCK IN</a><br>
-
-                        <input type="text" class="form-control" value="" id ="inputclockin">
+                        <a href = "{{ url('get/clockin')}}" class="btn btn-primary" disable>CLOCK IN</a><br>
+                        <input type="text" class="form-control" value="">{{time}}
                         <br>
                         Break:
                         <table>
                             <tr >
                                 <td>
-                                <button type="button" class="btn btn-success" id="start">START</button>
+                                <button type="button" class="btn btn-success">START</button>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" id="startinput">                         
+                                <input type="text" class="form-control" id="start">                         
                             </td>
                             </tr>
                             <tr >
                                 <td>
-                                    <button type="button"  class="btn btn-danger" id="endinput">END</button>
+                                    <button type="button"  class="btn btn-danger">END</button>
                                 </td>
                                 <td>
                                     <input type="password" class="form-control" id="end">
@@ -111,25 +106,4 @@
             </div>    
         </center>
     </body>
-    <script>
-    var dt = new Date();
-        $("#clockin").click(function(){ 
-            var time = dt.getHours() + ":" + dt.getMinutes() 
-            $("#clockin").attr("disabled", true);
-            $("#inputclockin").val(time);
-        })
-        $("#start").click(function(){ 
-            var time = dt.getHours() + ":" + dt.getMinutes() 
-            $("#start").attr("disabled", true);
-            $("#startinput").val(time);
-        })
-        $("#end").click(function(){ 
-            var time = dt.getHours() + ":" + dt.getMinutes() 
-            $("#end").attr("disabled", true);
-            $("#start").attr("disabled", false);
-            $("#endinput").val(time);
-        })
-
-
-    </script>
 </html>

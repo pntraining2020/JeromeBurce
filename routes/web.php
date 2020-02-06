@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/','clockController@show')->name('shownames');
+Route::get('/get/clockin','clockController@clockin')->name('get/clockin');
+
+
